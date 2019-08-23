@@ -1,1 +1,25 @@
-<p>section-orders works!</p>
+<div class="section-container">
+    <h2>Latest Orders</h2>
+    <table class="table table-inverse table-hover table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <td>ID</td>
+                <td>Customer</td>
+                <td>Amount</td>
+                <td>Order Placed</td>
+                <td>Order Fulfilled</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td>{{order.id}}</td>
+                <td>{{order.customer.name}}</td>
+                <td>{{order.total}}</td>
+                <td>{{order.placed | date:'dd-MM-yyyy'}}</td>
+                <td>{{order.fulfilled | date:'dd-MM-yyyy'}}</td>
+                <td>Status</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
